@@ -44,6 +44,12 @@ fu_cpuid(guint32 leaf, guint32 *eax, guint32 *ebx, guint32 *ecx, guint32 *edx, G
 
 	/* get vendor */
 	__get_cpuid_count(leaf, 0x0, &eax_tmp, &ebx_tmp, &ecx_tmp, &edx_tmp);
+	g_debug("leaf=0x%x, eax=0x%x, ebx=0x%x, ecx=0x%x, edx=0x%x",
+		leaf,
+		eax_tmp,
+		ebx_tmp,
+		ecx_tmp,
+		edx_tmp);
 	if (eax != NULL)
 		*eax = eax_tmp;
 	if (ebx != NULL)
